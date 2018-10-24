@@ -35,7 +35,7 @@ namespace StackHeap.App
             person.Age++;
             //person.Age => 22 (add +1 to a value in Heap)
             Console.WriteLine(age);
-            //age doesn't change
+            //age doesn't change 
             Console.ReadLine();
         }
         public struct Person
