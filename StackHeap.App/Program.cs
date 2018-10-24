@@ -48,7 +48,7 @@ namespace StackHeap.App
             public static int AgeToAdd = 0;
             public Person FetchAndAddAge()
             {
-                this.Age += AgeToAdd;
+                this.Age += AgeToAdd; //AgeToAdd is the same for every instance (heap pointer)
                 return this;
             }
         }
