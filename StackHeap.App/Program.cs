@@ -39,6 +39,7 @@ namespace StackHeap.App
             //person.Age => 22 (add +1 to a value in Heap)
             Console.WriteLine(age);
             //age doesn't change 
+            //int* pointerOfAgeToAdd = &Person.AgeToAdd; this is a heap pointer, it's not possible to commute to a stack pointer
             Console.ReadLine();
         }
         public struct Person
