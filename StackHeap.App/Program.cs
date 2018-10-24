@@ -27,9 +27,12 @@ namespace StackHeap.App
             int* pointer = &age; //in stack pointer => 0x00000caca839239 (memory in stack to another stack)
             Console.WriteLine("Memory: " + (int)pointer + " with value: " + *pointer);
             //in pointer you can find stack position of age and in *pointer the value of that stack
+
+            Person.AgeToAdd = 1; //in heap AgeToAdd of person takes value of 1 for every instance 
+            //(a static field or property is a pointer to heap)
             person = person.FetchAndAddAge();
-            //first at all stack runs FetchAndAddAge
-            //then assign to person value
+            //first at all stack runs FetchAndAddAge (stack operation of call, execution (with his stacks (his operations)) and return)
+            //then assign to person value (stack operation)
             age = person.Age;
             //age => 21 (in stack from a value in Heap)
             person.Age++;
@@ -42,9 +45,10 @@ namespace StackHeap.App
         {
             public string Name { get; set; }
             public int Age { get; set; }
+            public static int AgeToAdd = 0;
             public Person FetchAndAddAge()
             {
-                this.Age++;
+                this.Age += AgeToAdd;
                 return this;
             }
         }
