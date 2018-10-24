@@ -28,7 +28,14 @@ namespace StackHeap.App
             Console.WriteLine("Memory: " + (int)pointer + " with value: " + *pointer);
             //in pointer you can find stack position of age and in *pointer the value of that stack
             person = person.FetchAndAddAge();
-            //first at all
+            //first at all stack runs FetchAndAddAge
+            //then assign to person value
+            age = person.Age;
+            //age => 21 (in stack from a value in Heap)
+            person.Age++;
+            //person.Age => 22 (add +1 to a value in Heap)
+            Console.WriteLine(age);
+            //age doesn't change
             Console.ReadLine();
         }
         public struct Person
